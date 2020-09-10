@@ -1,3 +1,9 @@
+//***************************************************************************
+// Name: David Turnbough
+// Date: Thursday Septemeber 10, 2020
+// Geeks For Geeks: Maximum Index
+// https://practice.geeksforgeeks.org/problems/maximum-index/0
+//***************************************************************************
 import java.util.Scanner;
 
 public class MaximumIndex
