@@ -6,6 +6,7 @@
 //***************************************************************************
 import java.util.Scanner;
 
+// Problem: Find the maximum difference in indexes (j - i) such that a[i] > a[j]
 public class MaximumIndex
 {
 	public static void main(String[] args)
@@ -26,8 +27,13 @@ public class MaximumIndex
 
 			int maximumDifference = 0;
 
+			// Loops through the array until the end, or until the number of elements
+			//	left in the array can not be larger than the maximum difference already
+			//	found.
 			for (int i = 0; i < size && (size - i > maximumDifference); ++i)
 			{
+				// Moves closer to the left index, or until smaller than the maximum
+				//	difference already found.
 				for (int j = size - 1; j > i && (j - i > maximumDifference); --j)
 				{
 					if (arr[i] <= arr[j])
