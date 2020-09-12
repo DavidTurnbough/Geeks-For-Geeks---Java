@@ -12,7 +12,6 @@ import java.util.Scanner;
 
 public class JavaApplication274
 {
-
     public static final int MAX_SIZE = 3;
 
     public static void main(String[] args) throws IOException
