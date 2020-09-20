@@ -1,6 +1,6 @@
 //******************************************************************************
 // Name: David Turnbough
-// Date: Wednesday May 23, 2018
+// Date: Sunday September 20, 2020
 // Geeks For Geeks: K'th Smallest Element
 // https://practice.geeksforgeeks.org/problems/kth-smallest-element/0
 //******************************************************************************
