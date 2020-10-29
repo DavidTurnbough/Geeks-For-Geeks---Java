@@ -14,16 +14,23 @@ public class LeadersInAnArray
 {
     public static void main(String[] args) throws IOException
     {
+        // Generate an input stream
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         
+        // Get the number of testcases
         int testCases = Integer.parseInt(in.readLine());
         
+        // Loop through all of the testcases
         while(testCases-- > 0)
         {
+            // Get the size of the array
             int size = Integer.parseInt(in.readLine());
             
+            // Get the elements in the array
             String[] input = in.readLine().split(" ");
             
+            // Create an array of integers, convert the user input elements into
+            //  integers.
             int[] arr = new int[size];
             
             for(int i = 0; i < size; ++i)
@@ -31,9 +38,14 @@ public class LeadersInAnArray
                 arr[i] = Integer.parseInt(input[i]);
             }
             
-            int leader = Integer.MIN_VALUE;
+            // Variables used to keep track of the current largest leader, and the
+            //  final answer
+            int leader = arr[size - 1];
             String answer = "";
-            
+
+            // Beging from the final element, since it is always considered to be
+            //  a leader, search for each element to the left for an element that
+            //  is larger than the current leader.
             for(int i = size - 1; i >= 0; --i)
             {
                 if(arr[i] >= leader)
