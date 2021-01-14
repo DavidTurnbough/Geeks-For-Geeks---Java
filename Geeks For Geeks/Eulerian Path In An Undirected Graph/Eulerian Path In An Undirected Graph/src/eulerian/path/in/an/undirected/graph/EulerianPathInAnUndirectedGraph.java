@@ -38,6 +38,17 @@ public class EulerianPathInAnUndirectedGraph
                     graph[i][j] = Integer.parseInt(rawInput[j]);
                 }
             }
+            
+            for(int i = 0; i < vertices; ++i)
+            {
+                for(int j = 0; j < vertices; ++j)
+                {
+                    
+                }
+            }
+            
+            
+            
         }
     }
 }
