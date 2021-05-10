@@ -6,7 +6,6 @@
 //******************************************************************************
 package reverse.an.array;
 
-import static java.util.Arrays.sort;
 import java.util.Scanner;
 
 public class ReverseAnArray
