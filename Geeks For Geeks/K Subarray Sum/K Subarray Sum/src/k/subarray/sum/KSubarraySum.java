@@ -1,23 +1,72 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Name: David Turnbough
+ * Date: Monday May 10, 2021
+ * Geeks For Geeks: K Subarray Sum
+ * https://practice.geeksforgeeks.org/problems/k-subarray-sum/0/?problemStatus=unsolved&problemType=full&difficulty[]=-2&difficulty[]=-1&difficulty[]=0&page=1&query=problemStatusunsolvedproblemTypefulldifficulty[]-2difficulty[]-1difficulty[]0page1
+ *
  */
 package k.subarray.sum;
 
-/**
- *
- * @author JR
- */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
 public class KSubarraySum
 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
-        // TODO code application logic here
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+        int testCases = Integer.parseInt(in.readLine());
+
+        while (testCases-- > 0)
+        {
+            int[] rawInput = Arrays.stream(in.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+
+            int[] arr = Arrays.stream(in.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+
+            int size = rawInput[0];
+            int subarraySize = rawInput[1];
+            int sumsToFind = rawInput[2];
+
+            int[] sums = new int[sumsToFind];
+
+            for (int i = 0; i <= size - subarraySize; ++i)
+            {
+                int sum = 0;
+
+                for (int j = 0; j < subarraySize; ++j)
+                {
+                    sum += arr[i + j];
+                }
+
+                for (int k = 0; k < sumsToFind; ++k)
+                {
+                    int temp = 0;
+
+                    if (sum > sums[k])
+                    {
+                        temp = sums[k];
+                        sums[k] = sum;
+                        sum = temp;
+
+                        --k;
+                    }
+
+                }
+            }
+
+            /**
+             * Output Answer
+             */
+            for (int i = 0; i < sumsToFind; ++i)
+            {
+                System.out.printf("%d ", sums[i]);
+            }
+
+            System.out.printf("%n");
+        }
     }
-    
 }
